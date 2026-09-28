@@ -137,7 +137,7 @@ export default function ProjectCard({
   const previewItems = [...highlights, ...tags].slice(0, 3);
   const [imageFailed, setImageFailed] = useState(false);
   const showImage = image && !imageFailed;
-  const isPrivate = !sourceUrl && Boolean(repoNote);
+  const isPrivate = !sourceUrl && status?.toLowerCase().includes("private");
 
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-border bg-surface/60 backdrop-blur-sm transition-all duration-300 hover:-translate-y-2 hover:border-accent/50 hover:shadow-xl hover:shadow-accent-glow">
