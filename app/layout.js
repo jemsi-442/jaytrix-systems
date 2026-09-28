@@ -1,17 +1,5 @@
-import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/data";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-poppins",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
 
 export const metadata = {
   title: `${profile.name} | ${profile.title}`,
@@ -62,7 +50,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const bodyClass = `${poppins.variable} ${inter.variable} antialiased bg-background text-foreground`;
+  const bodyClass = "antialiased bg-background text-foreground";
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",

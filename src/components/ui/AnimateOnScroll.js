@@ -12,8 +12,17 @@ export default function AnimateOnScroll({
 }) {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [observerReady, setObserverReady] = useState(false);
 
   useEffect(() => {
+    const current = ref.current;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!current || reducedMotion || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return undefined;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -24,11 +33,9 @@ export default function AnimateOnScroll({
       { threshold }
     );
 
-    const current = ref.current;
-    if (current) observer.observe(current);
-    return () => {
-      if (current) observer.unobserve(current);
-    };
+    observer.observe(current);
+    setObserverReady(true);
+    return () => observer.unobserve(current);
   }, [threshold]);
 
   return (
@@ -36,7 +43,7 @@ export default function AnimateOnScroll({
       ref={ref}
       className={cn(
         "transition-all duration-700",
-        isVisible ? animation : "opacity-0 translate-y-8",
+        observerReady && !isVisible ? "opacity-0 translate-y-8" : isVisible ? animation : "",
         className
       )}
       style={{ animationDelay: `${delay}ms` }}
