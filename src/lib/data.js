@@ -8,6 +8,24 @@ export const profile = {
     "We build practical digital tools around the way an organization actually works: from business applications and APIs to point-of-sale, payroll, inventory, and management platforms.",
     "Our work emphasizes reliable delivery, clear communication, secure access, and maintainable systems that can grow with the people who depend on them.",
   ],
+  clientTypes: [
+    {
+      title: "Retail & distribution",
+      description: "Sales, stock, branch operations and business reporting.",
+    },
+    {
+      title: "Growing organizations",
+      description: "Administration, staff records, payroll and role-based workflows.",
+    },
+    {
+      title: "Service businesses",
+      description: "Websites, customer journeys, bookings and connected applications.",
+    },
+    {
+      title: "Teams with IT needs",
+      description: "Linux environments, deployments, troubleshooting and security reviews.",
+    },
+  ],
   workingStyle: [
     {
       title: "Start With Your Workflow",

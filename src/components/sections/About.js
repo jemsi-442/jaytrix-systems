@@ -9,7 +9,7 @@ export default function About() {
         <AnimateOnScroll>
           <SectionHeading
             title="Technology That Works for Your Business"
-            subtitle="JAYTRIX SYSTEMS provides practical digital services to businesses, organizations, and individuals across Tanzania."
+            subtitle="We work with Tanzanian businesses and organizations to make everyday operations more organized, connected and secure."
           />
         </AnimateOnScroll>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -35,6 +35,26 @@ export default function About() {
             </div>
           </AnimateOnScroll>
         </div>
+
+        <AnimateOnScroll animation="animate-fade-in-up" delay={100}>
+          <div className="mt-14 border-t border-border pt-10">
+            <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Who we work with</p>
+                <h3 className="mt-2 text-2xl font-bold text-foreground">Technology for real operating needs</h3>
+              </div>
+              <a href="#contact" className="text-sm font-semibold text-accent transition hover:text-accent-dark">Discuss your business needs →</a>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+              {profile.clientTypes.map((client) => (
+                <article key={client.title} className="rounded-2xl border border-border bg-background/50 p-5">
+                  <h4 className="font-semibold text-foreground">{client.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">{client.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

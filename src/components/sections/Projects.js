@@ -10,14 +10,14 @@ export default function Projects() {
         <AnimateOnScroll>
           <SectionHeading
             title="Selected solutions"
-            subtitle="A look at the kinds of systems JAYTRIX SYSTEMS designs and develops for real operational needs."
+            subtitle="Examples of business systems we have built, shared publicly or designed around real operational needs."
           />
         </AnimateOnScroll>
 
         <AnimateOnScroll animation="animate-fade-in-up" delay={80}>
           <div className="mb-10 flex flex-col gap-5 rounded-[1.75rem] border border-border bg-background-secondary p-6 md:flex-row md:items-center md:justify-between md:p-8">
             <p className="max-w-3xl text-sm leading-relaxed text-foreground-secondary md:text-base">
-              From retail and payroll to organizational management and online marketplaces, our work focuses on making complex day-to-day operations easier to run. Some project details are private, so we share only the information that can be made public.
+              These examples show how we approach retail, payroll, organizational management and digital marketplaces. Each project is labelled by its current stage; private work is described only at a level approved for sharing.
             </p>
             <a href="#contact" className="inline-flex shrink-0 items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-accent-dark">Discuss your project</a>
           </div>
