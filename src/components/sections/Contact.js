@@ -24,6 +24,16 @@ export default function Contact() {
     setSent(true);
   };
 
+  const whatsappMessage = [
+    "Hello JAYTRIX SYSTEMS, I would like to discuss a service inquiry.",
+    `Name: ${formData.name || "Not provided"}`,
+    `Email: ${formData.email || "Not provided"}`,
+    `Service: ${formData.service || "Not selected"}`,
+    "",
+    formData.message || "I would like to discuss my business needs.",
+  ].join("\n");
+  const whatsappInquiryUrl = `${profile.social.whatsapp}?text=${encodeURIComponent(whatsappMessage)}`;
+
   const contactItems = [
     { label: "Email", value: profile.email, href: `mailto:${profile.email}`, icon: MailIcon },
     { label: "Phone", value: profile.phone, href: `tel:${profile.phone}`, icon: PhoneIcon },
@@ -101,8 +111,12 @@ export default function Contact() {
                 <textarea id="message" name="message" rows={6} value={formData.message} onChange={handleChange} required className="mt-2 w-full resize-y rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent" placeholder="Tell us a little about what you need..." />
               </label>
 
-              <Button type="submit" size="lg" className="mt-5 w-full justify-center">{sent ? "Email draft prepared" : <>Prepare inquiry <SendIcon size={17} /></>}</Button>
-              {sent && <p role="status" className="mt-3 text-center text-sm text-accent">Your email application should open with the inquiry ready to review.</p>}
+              <Button type="submit" size="lg" className="mt-5 w-full justify-center">{sent ? "Email draft prepared" : <>Prepare email inquiry <SendIcon size={17} /></>}</Button>
+              {sent && <p role="status" className="mt-3 text-center text-sm text-accent">Your email application should open with the inquiry ready to review and send.</p>}
+              <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-accent/40 hover:text-accent">
+                <WhatsAppIcon size={18} /> Continue with WhatsApp
+              </a>
+              <p className="mt-3 text-center text-xs leading-relaxed text-foreground-muted">Your message opens in your chosen app for you to review and send.</p>
             </form>
           </AnimateOnScroll>
         </div>
