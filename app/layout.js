@@ -15,13 +15,13 @@ const inter = Inter({
 
 export const metadata = {
   title: `JayTrix Systems | ${profile.title}`,
-  applicationName: "JayTrix Systems Portfolio",
+  applicationName: "JAYTRIX SYSTEMS",
   description: `${profile.tagline} Based in ${profile.location}.`,
   keywords: [
     "JayTrix Systems",
-    "Software Engineer",
-    "Systems Architect",
-    "Linux Administrator",
+    "Custom Software Development",
+    "IT Services",
+    "Linux System Administration",
     "Cybersecurity",
     "Penetration Testing",
     "Next.js",
@@ -50,7 +50,7 @@ export const metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "JayTrix Systems portfolio preview",
+        alt: "JAYTRIX SYSTEMS company website preview",
       },
     ],
     type: "website",
@@ -74,10 +74,10 @@ export default function RootLayout({ children }) {
   const bodyClass = `${poppins.variable} ${inter.variable} antialiased bg-background text-foreground`;
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": "Organization",
     name: profile.name,
     alternateName: "JayTrix Systems",
-    jobTitle: profile.title,
+    description: profile.tagline,
     email: profile.email,
     telephone: profile.phone,
     address: {

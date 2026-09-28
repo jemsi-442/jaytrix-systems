@@ -74,19 +74,15 @@ export default function Projects() {
         
         <AnimateOnScroll>
           <SectionHeading
-            title="Software Systems & Engineering Work"
-            subtitle="Production-focused software systems designed with scalability, structured logic, and security-first principles."
+            title="Selected Projects & Solutions"
+            subtitle="Examples of the business platforms and digital solutions we design and develop."
           />
         </AnimateOnScroll>
 
         {/* Intro positioning paragraph */}
         <AnimateOnScroll animation="animate-fade-in-up" delay={100}>
           <div className="max-w-3xl mb-12 text-foreground-secondary text-base md:text-lg leading-relaxed">
-            Each project below represents a system-level implementation — 
-            not just interface development. These systems emphasize structured 
-            software logic, authentication-driven workflows, API integrity, 
-            database modeling, and scalable architectural decisions built 
-            for real-world operational environments.
+            Our project work applies our software, systems, and security expertise to real operational needs. Some client and in-progress builds are private; the examples below describe their capabilities and technology.
           </div>
         </AnimateOnScroll>
 
@@ -108,7 +104,7 @@ export default function Projects() {
             <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
               <div className="text-3xl font-bold text-accent">{projects.length}</div>
               <div className="mt-1 text-sm text-foreground-secondary">
-                software systems documented
+                projects presented
               </div>
             </div>
           </AnimateOnScroll>
@@ -116,7 +112,7 @@ export default function Projects() {
             <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
               <div className="text-3xl font-bold text-accent">{previewCount}</div>
               <div className="mt-1 text-sm text-foreground-secondary">
-                interface previews available
+                project previews
               </div>
             </div>
           </AnimateOnScroll>
@@ -124,7 +120,7 @@ export default function Projects() {
             <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
               <div className="text-3xl font-bold text-accent">{documentedRepos}</div>
               <div className="mt-1 text-sm text-foreground-secondary">
-                repos and private builds represented
+                public and private projects
               </div>
             </div>
           </AnimateOnScroll>
@@ -227,10 +223,7 @@ export default function Projects() {
         {/* Closing authority statement */}
         <AnimateOnScroll animation="animate-fade-in-up" delay={300}>
           <div className="mt-16 max-w-3xl text-sm md:text-base text-foreground-muted leading-relaxed">
-            My focus across all systems is consistency in architecture, 
-            clean separation of concerns, secure API design, role-based 
-            access control implementation, and maintainable software structures 
-            capable of scaling without compromising performance or integrity.
+            Our work emphasizes clear system structure, secure APIs, suitable access controls, and maintainable software that can grow with your organization.
           </div>
         </AnimateOnScroll>
 

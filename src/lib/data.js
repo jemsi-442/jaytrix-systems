@@ -1,65 +1,62 @@
 export const profile = {
-  name: "Jemsi Pallangyo (JAYTRIX)",
-  title: "Software Engineer & Systems Architect",
+  name: "JAYTRIX SYSTEMS",
+  title: "Software, IT & Cybersecurity Services",
   tagline:
-    "Designing robust software systems, secure application architectures, and scalable digital products built for real-world production environments.",
+    "We help businesses work smarter with custom software, secure systems, reliable IT support, and practical digital solutions.",
   about: [
-    "I work as a software engineer focused on building structured systems that stay understandable as products grow. My approach values software clarity, predictable workflows, and architecture that supports long-term change without becoming fragile.",
-    "I design applications around clear service boundaries, maintainable database models, secure access control, and business logic that reflects how real organizations actually operate day to day.",
-    "Working primarily in Linux environments, I care about production realism: validation that holds up, APIs that stay consistent, and engineering decisions that make systems easier to scale, support, and extend.",
+    "JAYTRIX SYSTEMS is a Tanzania-based technology company providing software development, systems design, Linux administration, IT support, and cybersecurity services.",
+    "We build practical digital tools around the way an organization actually works: from business applications and APIs to point-of-sale, payroll, inventory, and management platforms.",
+    "Our work emphasizes reliable delivery, clear communication, secure access, and maintainable systems that can grow with the people who depend on them.",
   ],
   workingStyle: [
     {
       title: "Architecture First",
       description:
-        "I start with system boundaries, data flow, and role behavior before chasing interface polish.",
+        "We plan system structure, data flow, and access needs before development begins.",
     },
     {
       title: "Security by Default",
       description:
-        "Authentication, permission control, and validation are treated as core product behavior, not add-ons.",
+        "Authentication, permission control, and validation are included as core parts of each solution.",
     },
     {
       title: "Operational Thinking",
       description:
-        "I build software around real workflows so the system helps teams work, not just store data.",
+        "We build around real workflows so the system helps teams work, not just store data.",
     },
     {
       title: "Maintainability Over Noise",
       description:
-        "I prefer clean structures, readable business logic, and choices that reduce future complexity.",
+        "We favor clear structures and maintainable business logic that can adapt over time.",
     },
   ],
   location: "Tanzania",
   email: "jemsifredrick4@gmail.com",
   phone: "+255683186987",
   whatsapp: "255683186987",
-  availability: "Available for software engineering collaborations and architecture-focused builds.",
-  responseTime: "Usually replies within 24 hours for serious project inquiries.",
+  availability: "Available for software, IT, systems, and cybersecurity service inquiries.",
+  responseTime: "Contact us to discuss your needs and next steps.",
   collaborationThemes: [
-    "New product or platform build",
-    "System redesign or cleanup",
-    "API and access-control planning",
-    "Workflow-heavy business software",
+    "Custom software development",
+    "Website or mobile application",
+    "Linux and IT support",
+    "Cybersecurity assessment",
   ],
   roleFlexibility: [
-    "Software engineering",
-    "Backend development",
-    "Mobile application development",
-    "POS and inventory systems",
-    "Linux systems administration",
-    "Junior cybersecurity / penetration testing",
-    "IT support",
-    "HR administration",
-    "Business administration",
-    "Payroll and records support",
-    "Operations support",
-    "Digital transformation",
+    "Custom Software Development",
+    "Web & Mobile Applications",
+    "POS, Payroll & Inventory Systems",
+    "Linux Server Administration",
+    "Cybersecurity & Ethical Testing",
+    "IT Support & Troubleshooting",
+    "API & Database Development",
+    "System Design & Integration",
   ],
   focusAreas: [
-    "Authentication-driven platforms",
-    "Role-based access control",
-    "Service-layered API design",
+    "Custom business software",
+    "Web and mobile applications",
+    "POS and management systems",
+    "IT infrastructure and security",
   ],
   social: {
     github: "https://github.com/jemsi-442",
@@ -71,16 +68,16 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "10+", label: "Systems Engineered" },
-  { value: "RBAC", label: "Access Control Focus" },
-  { value: "API", label: "Architecture-Driven" },
-  { value: "Linux", label: "Primary Environment" },
+  { value: "01", label: "Custom Software" },
+  { value: "02", label: "Web & Mobile Apps" },
+  { value: "03", label: "IT & Linux Support" },
+  { value: "04", label: "Cybersecurity" },
 ];
 
 export const skills = {
   architecture: {
-    title: "Software Architecture (Primary Focus)",
-    emphasis: "Core Strength",
+    title: "Custom Software & Business Systems",
+    emphasis: "Software Development",
     summary:
       "Designing service boundaries, access control, API structure, and business logic that can scale cleanly.",
     items: [
@@ -101,8 +98,8 @@ export const skills = {
     ],
   },
   database: {
-    title: "Database & Data Modeling",
-    emphasis: "System Foundation",
+    title: "API & Database Development",
+    emphasis: "Data Services",
     summary:
       "Building relational and document data structures that stay understandable, performant, and aligned to workflows.",
     items: [
@@ -117,8 +114,8 @@ export const skills = {
     ],
   },
   frontend: {
-    title: "Frontend (Supporting Layer)",
-    emphasis: "Delivery Support",
+    title: "Web & Mobile Applications",
+    emphasis: "Application Development",
     summary:
       "Implementing responsive interfaces that connect cleanly to system logic without overcomplicating the product layer.",
     items: [
@@ -135,8 +132,8 @@ export const skills = {
     ],
   },
   devops: {
-    title: "Dev Environment & Workflow",
-    emphasis: "Infrastructure Layer",
+    title: "Linux & IT Infrastructure",
+    emphasis: "IT Services",
     summary:
       "Working comfortably in Linux-based environments with practical server administration, deployment, and operational discipline.",
     items: [
@@ -155,8 +152,8 @@ export const skills = {
     ],
   },
   security: {
-    title: "Cybersecurity & Penetration Testing",
-    emphasis: "Security Layer",
+    title: "Cybersecurity Services",
+    emphasis: "Security Services",
     summary:
       "Assessing applications and environments through ethical testing, secure configuration review, and practical hardening recommendations.",
     items: [
@@ -497,10 +494,8 @@ export const projects = [
 
 export const navLinks = [
   { label: "Home", href: "#hero" },
-  { label: "Philosophy", href: "#about" },
-  { label: "Architecture Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
-  { label: "Systems", href: "#projects" },
-  { label: "Education", href: "#education" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#skills" },
+  { label: "Our Work", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];

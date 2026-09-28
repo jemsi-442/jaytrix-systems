@@ -42,7 +42,7 @@ export default function Footer() {
             </p>
             <div className="mt-5">
               <Button href="#projects" size="sm">
-                View Systems
+                Explore Our Work
               </Button>
             </div>
           </div>

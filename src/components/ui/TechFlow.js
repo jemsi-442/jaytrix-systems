@@ -188,7 +188,7 @@ export default function TechFlow() {
           fontFamily="var(--font-geist-mono), monospace"
           fontWeight="700"
         >
-          Architect
+          JAYTRIX
         </text>
       </svg>
 

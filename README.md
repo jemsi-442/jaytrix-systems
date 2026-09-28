@@ -1,78 +1,26 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,100:0f2027&height=200&section=header&text=JAYTRIX&fontSize=60&fontColor=00ffcc&animation=fadeIn" alt="JAYTRIX header" />
-</p>
+# JAYTRIX SYSTEMS
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=00FFCC&center=true&vCenter=true&width=700&lines=Software+Engineer;System+Architect;Security-Minded+Developer;Linux+Power+User;Building+Scalable+%26+Secure+Systems" alt="Typing banner" />
-</p>
+Company website for JAYTRIX SYSTEMS, a Tanzania-based technology services business.
 
-<h3 align="center">Software Engineer Portfolio</h3>
+The site presents services in custom software development, web and mobile applications, business management systems, Linux and IT support, and cybersecurity. Project examples include sales and inventory, payroll, pharmacy, governance, ecommerce, and service marketplace platforms.
 
-<p align="center">
-  A modern portfolio built with Next.js to present software engineering work, system architecture thinking, and production-oriented projects.
-</p>
+## Tech stack
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=nextdotjs" alt="Next.js 14" />
-  <img src="https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react" alt="React 18" />
-  <img src="https://img.shields.io/badge/TailwindCSS-4-0ea5e9?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS 4" />
-  <img src="https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel" alt="Vercel" />
-</p>
+- Next.js 14 App Router
+- React 18
+- Tailwind CSS 4 and custom global styles
+- Node.js 18.18+
 
-## Overview
-
-This repository contains the personal portfolio for **Jemsi Pallangyo (JAYTRIX)**.
-
-Preferred repository name: `jaytrixportifolio`
-
-The site is designed to communicate:
-
-- software engineering identity rather than a narrow single-role title
-- architecture-first thinking
-- structured presentation of skills, projects, education, and contact details
-- a polished visual style with motion, layered cards, and responsive sections
-
-## Highlights
-
-- Built with the Next.js App Router
-- Content-driven structure using a central data source
-- Responsive hero section with animated technical visualization
-- Reusable UI components for headings, cards, badges, and animated section reveals
-- Production-safe setup with working `lint` and `build` commands
-
-## Tech Stack
-
-```bash
-Framework    -> Next.js 14
-UI Layer     -> React 18
-Styling      -> Tailwind CSS 4 + custom global CSS
-Content      -> Centralized JS data objects
-Deployment   -> Vercel-ready
-Tooling      -> ESLint
-Runtime      -> Node.js 18.18+
-```
-
-## Local Development
-
-1. Install dependencies:
+## Run locally
 
 ```bash
 npm install
-```
-
-2. Start the development server:
-
-```bash
 npm run dev
 ```
 
-3. Open the app in your browser:
+Open `http://localhost:3000`.
 
-```bash
-http://localhost:3000
-```
-
-## Available Scripts
+## Available scripts
 
 ```bash
 npm run dev
@@ -81,67 +29,24 @@ npm run start
 npm run lint
 ```
 
-## Project Structure
+## Project structure
 
 ```text
 app/
-  globals.css        Global theme, motion, and shared utility styles
-  layout.js          App shell and metadata
-  page.js            Home page section composition
+  globals.css        Global theme, motion, and shared styles
+  layout.js          Site shell, metadata, and organization structured data
+  page.js            Company homepage sections
 
 public/
-  images/profile.jpg Profile image asset
+  images/            Project previews and supporting images
 
 src/
   components/
-    layout/          Navbar and footer
-    sections/        Hero, About, Skills, Projects, Experience, Education, Contact
-    ui/              Reusable presentational components
-  hooks/
-    useScrollSpy.js  Active section tracking for navigation
+    layout/          Navigation and footer
+    sections/        Hero, company, services, projects, and contact
+    ui/              Shared visual components
   lib/
-    data.js          Portfolio content source
-    utils.js         Small helpers
+    data.js          Company copy, services, projects, and contact details
 ```
 
-## Content Management
-
-Most portfolio content is controlled from:
-
-```text
-src/lib/data.js
-```
-
-This includes:
-
-- profile identity and contact information
-- stats and focus areas
-- skills categories
-- experience history
-- education items
-- projects and project metadata
-- navigation labels
-
-## Design Direction
-
-The interface is intentionally built around:
-
-- dark, technical presentation
-- accent-driven hierarchy
-- architecture and systems messaging
-- strong card-based information layout
-- subtle motion instead of excessive animation noise
-
-## Quality Checks
-
-The project currently passes:
-
-```bash
-npm run lint
-npm run build
-```
-
-## Notes
-
-- This repo uses centralized content so copy and branding updates are fast.
-- The UI is already structured for future additions like more project screenshots or a live contact backend.
+Edit `src/lib/data.js` to update the company description, services, project examples, and contact details.

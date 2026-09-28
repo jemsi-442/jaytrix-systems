@@ -38,7 +38,7 @@ export default function Hero() {
             </div>
 
             <div className="animate-fade-in-up mb-4 text-[11px] font-mono uppercase tracking-[0.28em] text-foreground-muted sm:text-xs">
-              Software engineering for structured, production-minded systems
+              Technology services for businesses and organizations
             </div>
 
             <div className="animate-fade-in-up">
@@ -50,10 +50,10 @@ export default function Hero() {
 
             <h1 className="animate-fade-in-up delay-100 mt-5 max-w-4xl">
               <span className="block text-[2.5rem] font-bold leading-[0.95] text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                Building
+                Technology for
               </span>
               <span className="mt-2 block text-[2.5rem] font-bold leading-[0.95] text-accent sm:text-5xl md:text-6xl lg:text-7xl">
-                Scalable, Secure Software
+                Smarter Business
               </span>
             </h1>
 
@@ -62,9 +62,7 @@ export default function Hero() {
             </p>
 
             <p className="animate-fade-in-up delay-300 mt-4 max-w-xl text-sm leading-relaxed text-foreground-muted md:text-base">
-              Specializing in software architecture, role-based access control,
-              API security, structured business logic, and performance-focused
-              system design.
+              From custom business software and mobile apps to Linux administration, IT support, and cybersecurity, we deliver technology shaped around your needs.
             </p>
 
             <div className="animate-fade-in-up delay-350 mt-6 flex flex-wrap gap-2.5">
@@ -80,7 +78,7 @@ export default function Hero() {
 
             <div className="animate-fade-in-up delay-400 mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <Button href="#projects" size="lg" className="w-full sm:w-auto">
-                View My Systems
+                Explore Our Work
               </Button>
               <Button
                 href="#contact"
@@ -88,15 +86,7 @@ export default function Hero() {
                 size="lg"
                 className="w-full sm:w-auto"
               >
-                Discuss Architecture
-              </Button>
-              <Button
-                href="#education"
-                variant="outline"
-                size="lg"
-                className="w-full sm:w-auto"
-              >
-                View Training
+                Talk to Our Team
               </Button>
             </div>
 
@@ -186,14 +176,14 @@ export default function Hero() {
               <div className="mb-4 flex items-center justify-between gap-4">
                 <div>
                   <div className="text-[11px] font-mono uppercase tracking-[0.24em] text-accent">
-                    Capability Map
+                    Services at a glance
                   </div>
                   <div className="mt-2 text-sm text-foreground-secondary sm:text-base">
-                    Core platforms, frameworks, and system layers I work across.
+                    Services and technology we work with.
                   </div>
                 </div>
                 <div className="hidden rounded-full border border-border bg-background/60 px-3 py-1 text-xs text-foreground-muted sm:block">
-                  Live stack view
+                  Our capabilities
                 </div>
               </div>
               <TechFlow />
@@ -209,7 +199,7 @@ export default function Hero() {
           aria-label="Scroll to about section"
         >
           <span className="text-xs font-mono tracking-wide">
-            View Architecture Philosophy
+            Discover our services
           </span>
           <ChevronDownIcon size={20} className="animate-bounce" />
         </a>

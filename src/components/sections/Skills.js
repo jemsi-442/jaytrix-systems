@@ -23,8 +23,8 @@ export default function Skills() {
         {/* Section Heading */}
         <AnimateOnScroll>
           <SectionHeading
-            title="Architecture & Technical Expertise"
-            subtitle="Capability areas shaped around software structure, reliable delivery, and real operational workflows."
+            title="Our Services"
+            subtitle="Flexible technology services to help you build, secure, and maintain your digital operations."
           />
         </AnimateOnScroll>
 
@@ -33,19 +33,19 @@ export default function Skills() {
             <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
               <div className="text-3xl font-bold text-accent">{primarySkillCount}</div>
               <div className="mt-1 text-sm text-foreground-secondary">
-                core architecture capabilities
+                software capabilities
               </div>
             </div>
             <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
               <div className="text-3xl font-bold text-accent">{categories.length}</div>
               <div className="mt-1 text-sm text-foreground-secondary">
-                skill layers represented
+                service areas
               </div>
             </div>
             <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
               <div className="text-3xl font-bold text-accent">{totalSkillCount}+</div>
               <div className="mt-1 text-sm text-foreground-secondary">
-                tools, patterns, and technologies
+                tools and technologies
               </div>
             </div>
           </div>
@@ -82,7 +82,7 @@ export default function Skills() {
                 </p>
 
                 <div className="mb-3 text-[11px] font-mono uppercase tracking-[0.2em] text-foreground-muted">
-                  Tools & Patterns
+                  Technology & Expertise
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.items.map((skill) => (

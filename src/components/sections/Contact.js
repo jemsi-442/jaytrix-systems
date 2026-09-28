@@ -47,7 +47,7 @@ export default function Contact() {
       subject: prev.subject || theme,
       message:
         prev.message ||
-        `Hi Jemsi,\n\nI would like to discuss: ${theme}.\n\nProject overview:\n- \n- \n-\n`,
+        `Hello JAYTRIX SYSTEMS,\n\nI would like to discuss: ${theme}.\n\nProject overview:\n- \n- \n-\n`,
     }));
   };
 
@@ -114,7 +114,7 @@ export default function Contact() {
         <AnimateOnScroll>
           <SectionHeading
             title="Get in Touch"
-            subtitle="For serious software builds, architecture work, and system-focused collaboration."
+            subtitle="Tell us what technology support your business or organization needs."
           />
         </AnimateOnScroll>
 
@@ -123,13 +123,10 @@ export default function Contact() {
           <AnimateOnScroll animation="animate-slide-in-left">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                Let&apos;s Build Something Structured
+                Let&apos;s Find the Right Solution
               </h3>
               <p className="text-foreground-secondary mb-8 leading-relaxed">
-                I&apos;m open to software engineering collaborations, API-focused
-                builds, and architecture discussions where system structure and
-                long-term maintainability matter. Reach out through the channel
-                that feels easiest for you.
+                We provide software development, IT and Linux support, systems improvement, and cybersecurity services. Reach out through the channel that works best for you.
               </p>
 
               <div className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -153,7 +150,7 @@ export default function Contact() {
 
               <div className="mb-8 rounded-[1.75rem] border border-border bg-surface/50 p-5">
                 <div className="text-[11px] font-mono uppercase tracking-[0.24em] text-accent">
-                  Best Fit Conversations
+                  Services We Can Discuss
                 </div>
                 <div className="mt-4 flex flex-wrap gap-3">
                   {profile.collaborationThemes.map((theme) => (
@@ -200,11 +197,10 @@ export default function Contact() {
 
               <div className="mb-8 rounded-[1.75rem] border border-accent/20 bg-accent/8 p-5">
                 <div className="text-[11px] font-mono uppercase tracking-[0.24em] text-accent">
-                  Role Flexibility
+                  Our Services
                 </div>
                 <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
-                  Available for technical roles, business operations support, and hybrid positions
-                  where software thinking and administration experience work together.
+                  Ask us about the technology services and support your organization needs.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {profile.roleFlexibility.map((role) => (
@@ -268,14 +264,13 @@ export default function Contact() {
             >
               <div>
                 <div className="text-[11px] font-mono uppercase tracking-[0.24em] text-accent">
-                  Project Inquiry
+                  Service Inquiry
                 </div>
                 <h3 className="mt-3 text-2xl font-bold text-foreground">
-                  Start the conversation clearly
+                  Tell us what you need
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground-secondary">
-                  Share the goal, the type of system you want to build or improve, and anything
-                  already in place. The more context you have, the faster I can respond with useful direction.
+                  Share your goal, the service you are looking for, and any relevant details. We will follow up to discuss a suitable next step.
                 </p>
               </div>
 
@@ -295,10 +290,10 @@ export default function Contact() {
                 </div>
                 <div className="rounded-2xl border border-border bg-background/60 p-4">
                   <div className="text-[11px] font-mono uppercase tracking-[0.2em] text-foreground-muted">
-                    Typical Reply
+                    Response
                   </div>
                   <p className="mt-2 text-sm text-foreground-secondary">
-                    Within 24h
+                    Contact us
                   </p>
                 </div>
                 <div className="rounded-2xl border border-border bg-background/60 p-4">
@@ -306,7 +301,7 @@ export default function Contact() {
                     Best For
                   </div>
                   <p className="mt-2 text-sm text-foreground-secondary">
-                    Serious builds
+                    Business & IT
                   </p>
                 </div>
               </div>
@@ -381,7 +376,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-foreground-muted focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-200 resize-none"
-                  placeholder="Tell me about your project..."
+                  placeholder="Tell us what service you need..."
                 />
               </div>
               <Button type="submit" size="lg" className="w-full">
@@ -395,7 +390,7 @@ export default function Contact() {
               </Button>
               {status === "drafted" && (
                 <div className="rounded-xl border border-accent/20 bg-accent/10 px-4 py-3 text-sm text-accent">
-                  Your email app should open with the message prepared for review.
+                  Your email app should open with your inquiry prepared for review.
                 </div>
               )}
             </form>
