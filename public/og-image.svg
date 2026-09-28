@@ -17,8 +17,8 @@
   <text x="340" y="220" fill="#062f73" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800" letter-spacing="8">JAYTRIX</text>
   <text x="344" y="292" fill="#222a34" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" letter-spacing="18">SYSTEMS</text>
   <text x="344" y="358" fill="#3a4654" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600" letter-spacing="5">TECHNOLOGY | INNOVATION | EXCELLENCE</text>
-  <text x="158" y="455" fill="#202832" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Software Engineering, Linux Administration & Cybersecurity</text>
-  <text x="158" y="505" fill="#6f7b8a" font-family="Arial, Helvetica, sans-serif" font-size="24">Architecture-driven systems built for real workflows and production environments.</text>
+  <text x="158" y="455" fill="#202832" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Custom Software, IT Support & Cybersecurity</text>
+  <text x="158" y="505" fill="#6f7b8a" font-family="Arial, Helvetica, sans-serif" font-size="24">Practical digital solutions for businesses and organizations.</text>
   <defs>
     <linearGradient id="bg" x1="0" x2="1200" y1="0" y2="630">
       <stop stop-color="#ffffff"/>

@@ -1,112 +1,64 @@
 import { skills } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Card from "@/components/ui/Card";
-import Badge from "@/components/ui/Badge";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 
+const deliverySteps = [
+  { number: "01", title: "Understand", text: "We learn about your goals, current setup and day-to-day workflow." },
+  { number: "02", title: "Build the right fit", text: "We agree on a practical solution and deliver it in clear steps." },
+  { number: "03", title: "Support and improve", text: "We help you operate the solution and plan what comes next." },
+];
+
 export default function Skills() {
-  // Reorder categories to emphasize core engineering strengths first
-  const categories = [
-    skills.architecture,
-    skills.database,
-    skills.devops,
-    skills.security,
-    skills.frontend,
-  ];
-  const primarySkillCount = skills.architecture.items.length;
-  const totalSkillCount = categories.reduce((count, category) => count + category.items.length, 0);
+  const services = [skills.architecture, skills.frontend, skills.database, skills.devops, skills.security];
 
   return (
-    <section id="skills" className="py-20 md:py-28 bg-background-secondary">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Heading */}
+    <section id="skills" className="py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
           <SectionHeading
-            title="Our Services"
-            subtitle="Flexible technology services to help you build, secure, and maintain your digital operations."
+            title="Services for the way you work"
+            subtitle="Choose the support you need today. We can also bring services together into one solution for your business."
           />
         </AnimateOnScroll>
 
-        <AnimateOnScroll animation="animate-fade-in-up" delay={80}>
-          <div className="mb-10 grid grid-cols-1 gap-4 md:grid-cols-3">
-            <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
-              <div className="text-3xl font-bold text-accent">{primarySkillCount}</div>
-              <div className="mt-1 text-sm text-foreground-secondary">
-                software capabilities
-              </div>
-            </div>
-            <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
-              <div className="text-3xl font-bold text-accent">{categories.length}</div>
-              <div className="mt-1 text-sm text-foreground-secondary">
-                service areas
-              </div>
-            </div>
-            <div className="rounded-[1.5rem] border border-border bg-surface/50 p-5 backdrop-blur-md">
-              <div className="text-3xl font-bold text-accent">{totalSkillCount}+</div>
-              <div className="mt-1 text-sm text-foreground-secondary">
-                tools and technologies
-              </div>
-            </div>
-          </div>
-        </AnimateOnScroll>
-
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 mt-12">
-          {categories.map((category, index) => (
-            <AnimateOnScroll
-              key={category.title}
-              animation="animate-fade-in-up"
-              delay={index * 150}
-            >
-              <Card className="h-full rounded-[1.75rem]">
-                <div className="mb-4 flex items-start justify-between gap-4">
-                  <div>
-                    <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-accent/15 bg-accent/8 px-3 py-1.5">
-                      <span className="h-2 w-2 rounded-full bg-accent" />
-                      <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">
-                        {category.emphasis}
-                      </span>
-                    </div>
-                    <h3 className="text-lg font-bold text-foreground">
-                      {category.title}
-                    </h3>
-                  </div>
-                  <div className="rounded-full border border-border bg-background/60 px-3 py-1 text-sm text-foreground-secondary">
-                    {category.items.length}
-                  </div>
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service, index) => (
+            <AnimateOnScroll key={service.title} animation="animate-fade-in-up" delay={index * 80}>
+              <article className="group h-full rounded-[1.75rem] border border-border bg-surface p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-xl hover:shadow-accent/5 md:p-7">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-semibold tracking-[0.18em] text-accent">{service.emphasis}</span>
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/8 text-sm font-bold text-accent transition group-hover:bg-accent group-hover:text-white">0{index + 1}</span>
                 </div>
-
-                <p className="mb-5 text-sm leading-relaxed text-foreground-secondary">
-                  {category.summary}
-                </p>
-
-                <div className="mb-3 text-[11px] font-mono uppercase tracking-[0.2em] text-foreground-muted">
-                  Technology & Expertise
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {category.items.map((skill) => (
-                    <Badge key={skill}>{skill}</Badge>
+                <h3 className="mt-5 text-xl font-bold text-foreground">{service.title}</h3>
+                <p className="mt-3 min-h-16 text-sm leading-relaxed text-foreground-secondary">{service.summary}</p>
+                <ul className="mt-5 space-y-3 border-t border-border pt-5">
+                  {service.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-foreground-secondary">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      <span>{item}</span>
+                    </li>
                   ))}
-                </div>
-              </Card>
+                </ul>
+              </article>
             </AnimateOnScroll>
           ))}
         </div>
 
-        {/* Bottom statement for authority */}
-        <AnimateOnScroll animation="animate-fade-in-up" delay={600}>
-          <div className="mt-12 rounded-[1.75rem] border border-border bg-surface/35 p-6 backdrop-blur-md">
-            <div className="text-[11px] font-mono uppercase tracking-[0.24em] text-accent">
-              Engineering Perspective
-            </div>
-            <p className="mt-4 max-w-4xl text-sm leading-relaxed text-foreground-muted md:text-base">
-              My strongest value is not just knowing tools, but knowing how to combine them into stable
-              systems. I care about where business logic lives, how permissions behave, how data grows,
-              and how the product stays maintainable once real users and real workflows start depending on it.
-            </p>
+        <div className="mt-20 rounded-[2rem] bg-[#071b3b] px-6 py-8 text-white md:px-10 md:py-10">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">How we work</p>
+            <h3 className="mt-3 text-2xl font-bold md:text-3xl">Clear steps. Practical outcomes.</h3>
           </div>
-        </AnimateOnScroll>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {deliverySteps.map((step) => (
+              <div key={step.number} className="border-t border-white/15 pt-4">
+                <span className="text-xs font-mono text-cyan-200">{step.number}</span>
+                <h4 className="mt-2 font-semibold">{step.title}</h4>
+                <p className="mt-2 text-sm leading-relaxed text-blue-100/70">{step.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

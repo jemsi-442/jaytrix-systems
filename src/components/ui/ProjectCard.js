@@ -54,7 +54,7 @@ function getPreviewTone(title, category) {
 
 function getPreviewMeta(title, category, tags) {
   const key = `${title} ${category}`.toLowerCase();
-  const stack = tags.slice(0, 3).join(" • ");
+  const stack = tags.slice(0, 3).join(" · ");
 
   if (key.includes("school")) {
     return {
@@ -157,7 +157,7 @@ export default function ProjectCard({
           <>
             <Image
               src={image}
-              alt={imageAlt || `${title} project screenshot`}
+              alt={imageAlt || `${title} project preview`}
               fill
               className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -165,7 +165,7 @@ export default function ProjectCard({
             />
             <div className="absolute inset-0 bg-linear-to-t from-background via-background/25 to-transparent" />
             <div className="absolute left-4 bottom-4 rounded-full border border-white/15 bg-background/70 px-3 py-1 text-[11px] font-mono uppercase tracking-[0.18em] text-white/80 backdrop-blur-md">
-              Live Interface Preview
+              Project overview
             </div>
           </>
         ) : (
@@ -198,7 +198,7 @@ export default function ProjectCard({
             >
               <div className="mb-3 flex items-center justify-between">
                 <span className="text-[10px] font-mono uppercase tracking-[0.24em] text-white/70">
-                  System View
+                  Workflow snapshot
                 </span>
                 <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: tone.edge }} />
               </div>
@@ -266,7 +266,7 @@ export default function ProjectCard({
         {!showImage && (
           <div className="absolute left-4 top-14">
             <span className="rounded-full border border-white/12 bg-background/55 px-3 py-1 text-[10px] font-mono uppercase tracking-[0.2em] text-white/70 backdrop-blur-md">
-              Visual pending, architecture documented
+              Solution overview
             </span>
           </div>
         )}
@@ -285,9 +285,10 @@ export default function ProjectCard({
           {title}
         </h3>
         {role && (
-          <p className="mb-3 text-sm font-medium leading-relaxed text-accent">
-            {role}
-          </p>
+          <div className="mb-3">
+            <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-foreground-muted">Solution focus</div>
+            <p className="mt-1 text-sm font-semibold leading-relaxed text-accent">{role}</p>
+          </div>
         )}
         <p className="mb-4 text-sm leading-relaxed text-foreground-secondary">
           {description}
@@ -324,7 +325,7 @@ export default function ProjectCard({
 
         {/* Tags */}
         <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.2em] text-foreground-muted">
-          Stack & Tools
+          Key capabilities
         </div>
         <div className="mb-4 flex flex-wrap gap-2">
           {tags.map((tag) => (
@@ -355,7 +356,7 @@ export default function ProjectCard({
               aria-label={`Source code of ${title}`}
             >
               <GithubIcon size={16} />
-              <span>Source Code</span>
+              <span>View project code</span>
             </a>
           )}
           {!sourceUrl && repoNote && (
