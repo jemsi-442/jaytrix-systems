@@ -24,7 +24,7 @@ export default function Skills() {
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => (
             <AnimateOnScroll key={service.title} animation="animate-fade-in-up" delay={index * 80}>
-              <article className="group h-full rounded-[1.75rem] border border-border bg-surface p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-xl hover:shadow-accent/5 md:p-7">
+              <article className="group flex h-full flex-col rounded-[1.75rem] border border-border bg-surface p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-accent/35 hover:shadow-xl hover:shadow-accent/5 md:p-7">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono font-semibold tracking-[0.18em] text-accent">{service.emphasis}</span>
                   <span className="grid h-10 w-10 place-items-center rounded-xl bg-accent/8 text-sm font-bold text-accent transition group-hover:bg-accent group-hover:text-white">0{index + 1}</span>
@@ -39,6 +39,9 @@ export default function Skills() {
                     </li>
                   ))}
                 </ul>
+                <a href="#contact" className="mt-auto inline-flex items-center gap-2 border-t border-border pt-5 text-sm font-semibold text-accent transition hover:text-accent-dark">
+                  Discuss this service <span aria-hidden="true">→</span>
+                </a>
               </article>
             </AnimateOnScroll>
           ))}

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Badge from "./Badge";
 import { ExternalLinkIcon, GithubIcon, LockIcon } from "@/components/icons";
 
 function getPreviewTone(title, category) {
@@ -127,13 +126,10 @@ export default function ProjectCard({
   imageAlt,
   role,
   description,
-  focus,
   highlights = [],
   tags = [],
   liveUrl,
   sourceUrl,
-  repoNote,
-  privacyNote,
   placeholder = false,
 }) {
   const tone = getPreviewTone(title, category);
@@ -293,17 +289,6 @@ export default function ProjectCard({
         <p className="mb-4 text-sm leading-relaxed text-foreground-secondary">
           {description}
         </p>
-        {focus && (
-          <p className="mb-5 rounded-2xl border border-accent/15 bg-accent/5 px-4 py-3 text-sm leading-relaxed text-foreground-secondary">
-            {focus}
-          </p>
-        )}
-        {privacyNote && (
-          <p className="mb-5 rounded-2xl border border-border bg-background/70 px-4 py-3 text-sm leading-relaxed text-foreground-muted">
-            {privacyNote}
-          </p>
-        )}
-
         {highlights.length > 0 && (
           <div className="mb-5">
             <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.2em] text-foreground-muted">
@@ -322,16 +307,6 @@ export default function ProjectCard({
             </ul>
           </div>
         )}
-
-        {/* Tags */}
-        <div className="mb-2 text-[11px] font-mono uppercase tracking-[0.2em] text-foreground-muted">
-          Key capabilities
-        </div>
-        <div className="mb-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <Badge key={tag}>{tag}</Badge>
-          ))}
-        </div>
 
         {/* Links */}
         <div className="mt-auto flex flex-wrap items-center gap-4 border-t border-border pt-4">
@@ -359,11 +334,11 @@ export default function ProjectCard({
               <span>View project code</span>
             </a>
           )}
-          {!sourceUrl && repoNote && (
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-3 py-1.5 text-sm text-foreground-muted">
-              <LockIcon size={15} />
-              <span>{repoNote}</span>
-            </span>
+          {!sourceUrl && (
+            <a href="#contact" className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition hover:text-accent-dark">
+              <span>Discuss a similar solution</span>
+              <span aria-hidden="true">→</span>
+            </a>
           )}
         </div>
       </div>
