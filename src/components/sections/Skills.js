@@ -1,6 +1,7 @@
 import { skills } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import TechnologyStacks from "@/components/sections/TechnologyStacks";
 
 const deliverySteps = [
   { number: "01", title: "Understand", text: "We learn about your goals, current setup and day-to-day workflow." },
@@ -46,6 +47,8 @@ export default function Skills() {
             </AnimateOnScroll>
           ))}
         </div>
+
+        <TechnologyStacks />
 
         <div className="mt-20 rounded-[2rem] bg-[#071b3b] px-6 py-8 text-white md:px-10 md:py-10">
           <div className="max-w-2xl">

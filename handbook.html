@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#102d52" />
+    <meta
+      name="description"
+      content="Read the JAYTRIX SYSTEMS Service & Business Development Handbook."
+    />
+    <title>JAYTRIX SYSTEMS | Service & Business Development Handbook</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --navy: #102d52;
+        --blue: #2874c8;
+        --ink: #26364a;
+        --muted: #596a7c;
+        --line: #dce5ef;
+        --paper: #ffffff;
+        --background: #edf2f8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--background);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 1rem clamp(1rem, 4vw, 3rem);
+        color: white;
+        background: var(--navy);
+      }
+      .brand { font-weight: 800; letter-spacing: .12em; }
+      .brand small {
+        display: block;
+        margin-top: .3rem;
+        color: #b9cce3;
+        font-size: .68rem;
+        font-weight: 600;
+        letter-spacing: .16em;
+      }
+      .actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+      .actions a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.6rem;
+        padding: .6rem 1rem;
+        border: 1px solid #7894b5;
+        border-radius: .55rem;
+        color: white;
+        font-size: .9rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .actions a.primary { border-color: var(--blue); background: var(--blue); }
+      main { width: min(1200px, calc(100% - 2rem)); margin: 2rem auto; }
+      .intro {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+      h1 { margin: 0; color: var(--navy); font-size: clamp(1.35rem, 3vw, 2rem); }
+      .intro p { margin: .45rem 0 0; color: var(--muted); }
+      .badge {
+        flex: 0 0 auto;
+        padding: .45rem .75rem;
+        border: 1px solid #bfd4ed;
+        border-radius: 999px;
+        color: #17477b;
+        background: #e3effc;
+        font-size: .8rem;
+        font-weight: 700;
+      }
+      .viewer {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: .9rem;
+        background: var(--paper);
+        box-shadow: 0 18px 48px rgb(16 45 82 / 12%);
+      }
+      iframe { display: block; width: 100%; height: min(78vh, 1050px); min-height: 620px; border: 0; }
+      .fallback { padding: 1rem; color: var(--muted); text-align: center; }
+      .fallback a { color: var(--blue); font-weight: 700; }
+      @media (max-width: 640px) {
+        header, .intro { align-items: flex-start; flex-direction: column; }
+        main { width: min(100% - 1rem, 1200px); margin: 1rem auto; }
+        iframe { height: 75vh; min-height: 500px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        JAYTRIX SYSTEMS
+        <small>TECHNOLOGY | INNOVATION | EXCELLENCE</small>
+      </div>
+      <nav class="actions" aria-label="Handbook actions">
+        <a href="JAYTRIX-Service-Business-Development-Handbook-Readable.pdf" target="_blank" rel="noopener">Open PDF</a>
+        <a class="primary" href="JAYTRIX-Service-Business-Development-Handbook-Readable.pdf" download>Download handbook</a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro" aria-labelledby="handbook-title">
+        <div>
+          <h1 id="handbook-title">Service &amp; Business Development Handbook</h1>
+          <p>Internal training guide for understanding client needs and developing opportunities.</p>
+        </div>
+        <span class="badge">Official PDF · 60 pages</span>
+      </section>
+      <section class="viewer" aria-label="Handbook PDF reader">
+        <iframe
+          src="JAYTRIX-Service-Business-Development-Handbook-Readable.pdf#view=FitH"
+          title="JAYTRIX SYSTEMS Service and Business Development Handbook"
+        ></iframe>
+        <p class="fallback">
+          If the handbook does not appear here,
+          <a href="JAYTRIX-Service-Business-Development-Handbook-Readable.pdf">open the PDF directly</a>.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

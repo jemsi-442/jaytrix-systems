@@ -141,6 +141,35 @@ export const projects = [
     privacyNote: "Project details are limited. Contact us to discuss management systems for your organization.",
   },
   {
+    title: "Afaq Madrasa Management System (MMS)",
+    category: "Madrasa education",
+    status: "System specification",
+    image: "/images/projects/madrasa-management-dashboard.svg",
+    imageAlt: "Illustrative Afaq madrasa administration dashboard preview with student, class, attendance and Qur’an progress panels",
+    role: "Madrasa workflow and platform architecture design",
+    description:
+      "A Tanzania-focused madrasa management platform specified to bring student and guardian records, classes, attendance, Qur’an memorization progress and fee administration into one coordinated workflow.",
+    focus:
+      "The specification plans for multi-organization and branch support, low-bandwidth settings, TZS billing and parent communication. Its proposed stack includes Node.js, Express, TypeScript, React, MariaDB, Prisma and Redis; Snippe mobile-money integration is planned.",
+    highlights: [
+      "Student, guardian, class, attendance and Hifdh tracking workflows",
+      "Fee structures, invoices, payment records and finance reporting",
+      "Role-based views for administrators, accountants, teachers and parents",
+    ],
+    tags: [
+      "Madrasa Administration",
+      "Hifdh Tracking",
+      "Multi-Branch",
+      "Fee Billing",
+      "Parent Portal",
+    ],
+    liveUrl: null,
+    sourceUrl: null,
+    repoNote: "Architecture specification",
+    privacyNote:
+      "The supplied documentation describes the proposed architecture and phased MVP scope; it does not confirm that every module or payment integration is live.",
+  },
+  {
     title: "Pharmacy Management System",
     category: "Pharmacy operations",
     status: "Open-source example",

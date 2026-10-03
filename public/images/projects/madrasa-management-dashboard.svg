@@ -1,0 +1,113 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sidebar" x1="122" y1="70" x2="122" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17334B"/><stop offset="1" stop-color="#0C2234"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#D9A84D"/><stop offset="1" stop-color="#A96F1F"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#18324A" flood-opacity=".08"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" rx="28" fill="#F5F7FA"/>
+  <rect width="256" height="900" rx="28" fill="url(#sidebar)"/>
+  <rect x="228" width="28" height="900" fill="#0F293C"/>
+  <path d="M44 55 68 33l23 22-23 23L44 55Z" fill="url(#gold)"/>
+  <path d="m35 64 17-17 17 17-17 17-17-17Z" fill="#F4F6F9"/>
+  <text x="103" y="64" fill="#F8FAFC" font-size="37" font-weight="700" font-family="Arial,sans-serif">Afaq</text>
+  <text x="30" y="126" fill="#8FA4B7" font-size="13" font-weight="700" letter-spacing="2" font-family="Arial,sans-serif">MADRASA ADMIN</text>
+  <rect x="14" y="151" width="214" height="47" rx="10" fill="#A9782D"/>
+  <path d="M34 175 44 165l10 10v11H34v-11Z" fill="white"/>
+  <text x="70" y="181" fill="white" font-size="17" font-weight="700" font-family="Arial,sans-serif">Dashboard</text>
+  <g fill="#E7EDF3" font-family="Arial,sans-serif" font-size="16">
+    <circle cx="43" cy="229" r="8" fill="none" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="235">Students</text>
+    <path d="M34 275h18v14H34zM38 270h10v5H38z" stroke="#DCE5ED" stroke-width="2" fill="none"/><text x="70" y="286">Classes</text>
+    <circle cx="43" cy="328" r="7" stroke="#DCE5ED" stroke-width="2"/><path d="M30 347c2-11 24-11 26 0" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="334">Teachers</text>
+    <path d="M31 377h24M34 370h18v14H34z" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="382">Subjects</text>
+    <path d="M34 421h18M34 428h18M34 435h18" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="432">Qur’an Progress</text>
+    <rect x="34" y="458" width="18" height="18" rx="3" stroke="#DCE5ED" stroke-width="2"/><path d="M34 464h18M39 454v8M47 454v8" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="474">Attendance</text>
+    <path d="M34 514h18M37 507h12v16H37z" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="519">Fees &amp; Payments</text>
+    <path d="M34 559h18M34 566h18M34 573h18" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="566">Reports</text>
+    <path d="M34 608h18M34 602l9-7 9 7" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="613">Communications</text>
+    <circle cx="43" cy="660" r="8" stroke="#DCE5ED" stroke-width="2"/><path d="M43 647v3m0 20v3m13-13h-3m-20 0h-3" stroke="#DCE5ED" stroke-width="2"/><text x="70" y="666">Settings</text>
+  </g>
+  <path d="M25 711h190" stroke="#607587" stroke-opacity=".6"/>
+  <text x="31" y="758" fill="#D8E0E8" font-size="16" font-style="italic" font-family="Arial,sans-serif">Knowledge · Character</text>
+  <text x="31" y="783" fill="#D8E0E8" font-size="16" font-style="italic" font-family="Arial,sans-serif">· Opportunity</text>
+  <g opacity=".18" fill="#9EB1C0">
+    <path d="M0 870h256v30H0zM20 870v-41l18-20 18 20v41M27 829v-16l11-12 11 12v16M90 870v-57l35-35 35 35v57M103 813v-24l22-22 22 22v24M181 870v-41l18-20 18 20v41M188 829v-16l11-12 11 12v16Z"/>
+  </g>
+
+  <rect x="256" width="1344" height="78" fill="#FFFFFF"/>
+  <path d="M256 77h1344" stroke="#E4E9EE"/>
+  <path d="M289 31h17m-17 8h17m-17 8h17" stroke="#33485B" stroke-width="2" stroke-linecap="round"/>
+  <rect x="333" y="17" width="670" height="45" rx="11" fill="#F6F8FA" stroke="#E5E9EE"/>
+  <circle cx="359" cy="39" r="7" stroke="#788A9A" stroke-width="2"/><path d="m364 44 6 6" stroke="#788A9A" stroke-width="2"/>
+  <text x="382" y="45" fill="#81909E" font-size="15" font-family="Arial,sans-serif">Search students, classes, teachers, or anything...</text>
+  <circle cx="1357" cy="39" r="17" fill="#F1F4F6"/><path d="M1351 43v-5a6 6 0 0 1 12 0v5l3 3h-18l3-3Z" stroke="#30485E" stroke-width="1.7"/>
+  <circle cx="1371" cy="24" r="10" fill="#DC3545"/><text x="1368" y="28" fill="white" font-size="11" font-weight="700" font-family="Arial,sans-serif">3</text>
+  <circle cx="1422" cy="39" r="20" fill="#D7E0E7"/><circle cx="1422" cy="33" r="7" fill="#8C6542"/><path d="M1409 55c2-12 24-12 26 0" fill="#183A56"/>
+  <text x="1450" y="34" fill="#1B2E40" font-size="13" font-weight="700" font-family="Arial,sans-serif">Admin</text>
+  <text x="1450" y="52" fill="#728292" font-size="11" font-family="Arial,sans-serif">Administrator</text>
+
+  <text x="282" y="131" fill="#132B41" font-size="29" font-weight="700" font-family="Arial,sans-serif">Assalamu Alaikum, Admin!</text>
+  <text x="282" y="160" fill="#526679" font-size="17" font-family="Arial,sans-serif">Here’s an overview of your madrasa today.</text>
+  <rect x="1308" y="102" width="252" height="47" rx="10" fill="url(#gold)"/>
+  <text x="1340" y="132" fill="white" font-size="16" font-weight="700" font-family="Arial,sans-serif">＋  Add New</text>
+  <rect x="1048" y="106" width="42" height="40" rx="10" fill="#EDF1F5"/><path d="M1060 115h17v20h-17zM1060 121h17m-12-10v6m8-6v6" stroke="#4B6277" stroke-width="1.6"/>
+  <text x="1101" y="120" fill="#223B51" font-size="13" font-family="Arial,sans-serif">Madrasa overview</text>
+  <text x="1101" y="139" fill="#728292" font-size="12" font-family="Arial,sans-serif">Dashboard preview</text>
+
+  <g filter="url(#shadow)">
+    <rect x="280" y="184" width="244" height="129" rx="15" fill="#EAF3FC"/>
+    <rect x="537" y="184" width="244" height="129" rx="15" fill="#EAF6EF"/>
+    <rect x="794" y="184" width="244" height="129" rx="15" fill="#FFF5E5"/>
+    <rect x="1051" y="184" width="244" height="129" rx="15" fill="#FCEEEE"/>
+    <rect x="1308" y="184" width="252" height="129" rx="15" fill="#F2EEFC"/>
+  </g>
+  <g font-family="Arial,sans-serif">
+    <circle cx="326" cy="232" r="25" fill="#D7E9FC"/><circle cx="319" cy="229" r="6" fill="#2772C6"/><circle cx="333" cy="229" r="6" fill="#2772C6"/><path d="M309 245c1-9 18-9 20 0m-5-1c1-8 16-8 18 0" stroke="#2772C6" stroke-width="3" stroke-linecap="round"/>
+    <text x="365" y="231" fill="#182C43" font-size="24" font-weight="700">248</text><text x="365" y="258" fill="#334B61" font-size="14">Total Students</text><text x="365" y="286" fill="#19885A" font-size="12">▲  +12 this month</text>
+    <circle cx="583" cy="232" r="25" fill="#DDF0E5"/><path d="M570 222h26v20h-26zM576 218h14v4h-14z" stroke="#238553" stroke-width="2.4"/><text x="622" y="231" fill="#182C43" font-size="24" font-weight="700">12</text><text x="622" y="258" fill="#334B61" font-size="14">Active Classes</text><text x="622" y="286" fill="#19885A" font-size="12">▲  +2 this month</text>
+    <circle cx="840" cy="232" r="25" fill="#F9EBD0"/><circle cx="840" cy="224" r="7" fill="#B47A1F"/><path d="M827 246c1-12 25-12 26 0" fill="#B47A1F"/><text x="879" y="231" fill="#182C43" font-size="24" font-weight="700">18</text><text x="879" y="258" fill="#334B61" font-size="14">Teachers</text><text x="879" y="286" fill="#19885A" font-size="12">▲  +1 this month</text>
+    <circle cx="1097" cy="232" r="25" fill="#F8DDDF"/><path d="M1081 222 1097 212l16 10-16 10-16-10Zm5 7v10h22v-10m-15-4 4-3 4 3" fill="#C8373B"/><text x="1136" y="231" fill="#182C43" font-size="24" font-weight="700">6</text><text x="1136" y="258" fill="#334B61" font-size="14">Subjects</text><text x="1136" y="286" fill="#667789" font-size="12">Active this term</text>
+    <circle cx="1354" cy="232" r="25" fill="#E7DFFC"/><path d="M1342 244v-12h6v12m4 0v-19h6v19m4 0v-9h6v9" stroke="#7152B6" stroke-width="4"/><text x="1393" y="231" fill="#182C43" font-size="24" font-weight="700">78%</text><text x="1393" y="258" fill="#334B61" font-size="14">Qur’an Progress</text><text x="1393" y="286" fill="#19885A" font-size="12">▲  +5% this month</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="280" y="331" width="404" height="253" rx="15" fill="white"/>
+    <rect x="700" y="331" width="370" height="253" rx="15" fill="white"/>
+    <rect x="1086" y="331" width="474" height="253" rx="15" fill="white"/>
+    <rect x="280" y="603" width="625" height="270" rx="15" fill="white"/>
+    <rect x="923" y="603" width="637" height="270" rx="15" fill="white"/>
+  </g>
+  <g font-family="Arial,sans-serif">
+    <text x="299" y="367" fill="#162E45" font-size="17" font-weight="700">Student Enrollment</text><text x="567" y="366" fill="#5D7081" font-size="12">Last 6 Months⌄</text>
+    <path d="M326 518h336M326 397v121" stroke="#D9E0E6"/><path d="M326 488h336M326 458h336M326 428h336" stroke="#E9EDF1"/>
+    <g fill="#173A59"><rect x="358" y="467" width="32" height="51" rx="3"/><rect x="408" y="451" width="32" height="67" rx="3"/><rect x="458" y="435" width="32" height="83" rx="3"/><rect x="508" y="421" width="32" height="97" rx="3"/><rect x="558" y="403" width="32" height="115" rx="3"/><rect x="608" y="388" width="32" height="130" rx="3"/></g>
+    <g fill="#6A7B8A" font-size="11"><text x="359" y="541">Apr</text><text x="409" y="541">May</text><text x="459" y="541">Jun</text><text x="509" y="541">Jul</text><text x="559" y="541">Aug</text><text x="609" y="541">Sep</text></g>
+    <text x="721" y="367" fill="#162E45" font-size="17" font-weight="700">Qur’an Progress</text>
+    <circle cx="825" cy="465" r="66" stroke="#E6EBEF" stroke-width="22"/><circle cx="825" cy="465" r="66" stroke="#24965C" stroke-width="22" stroke-dasharray="299 415" transform="rotate(-90 825 465)"/><circle cx="825" cy="465" r="66" stroke="#7EB7E6" stroke-width="22" stroke-dasharray="75 415" stroke-dashoffset="-300" transform="rotate(-90 825 465)"/>
+    <text x="790" y="463" fill="#172E45" font-size="22" font-weight="700">72%</text><text x="787" y="483" fill="#65788A" font-size="11">Completed</text>
+    <circle cx="921" cy="433" r="6" fill="#24965C"/><text x="938" y="438" fill="#52677A" font-size="13">Completed</text><text x="1032" y="438" fill="#172E45" font-size="13" font-weight="700">72%</text>
+    <circle cx="921" cy="466" r="6" fill="#7EB7E6"/><text x="938" y="471" fill="#52677A" font-size="13">In Progress</text><text x="1032" y="471" fill="#172E45" font-size="13" font-weight="700">18%</text>
+    <circle cx="921" cy="499" r="6" fill="#B9C3CB"/><text x="938" y="504" fill="#52677A" font-size="13">Not Started</text><text x="1032" y="504" fill="#172E45" font-size="13" font-weight="700">10%</text>
+    <text x="1106" y="367" fill="#162E45" font-size="17" font-weight="700">Recent Activities</text><text x="1502" y="367" fill="#2874C8" font-size="13">View all</text>
+    <path d="M1120 405v145" stroke="#D7E0E6" stroke-width="2"/>
+    <g font-size="13"><circle cx="1120" cy="413" r="8" fill="#49A573"/><text x="1144" y="410" fill="#26394B" font-weight="700">New student registered</text><text x="1144" y="430" fill="#758595" font-size="11">Student record added</text>
+    <circle cx="1120" cy="450" r="8" fill="#4C98D8"/><text x="1144" y="447" fill="#26394B" font-weight="700">Qur’an progress updated</text><text x="1144" y="467" fill="#758595" font-size="11">Hifdh learning record</text>
+    <circle cx="1120" cy="487" r="8" fill="#8B70C7"/><text x="1144" y="484" fill="#26394B" font-weight="700">Attendance recorded</text><text x="1144" y="504" fill="#758595" font-size="11">Class attendance entry</text>
+    <circle cx="1120" cy="524" r="8" fill="#D69B37"/><text x="1144" y="521" fill="#26394B" font-weight="700">Fee payment recorded</text><text x="1144" y="541" fill="#758595" font-size="11">Invoice and receipt workflow</text></g>
+    <text x="299" y="640" fill="#162E45" font-size="17" font-weight="700">Classes Overview</text><text x="844" y="640" fill="#2874C8" font-size="13">View all</text>
+    <rect x="298" y="658" width="586" height="34" rx="8" fill="#F1F4F7"/>
+    <g fill="#42586C" font-size="12" font-weight="700"><text x="312" y="680">Class</text><text x="425" y="680">Students</text><text x="518" y="680">Teacher</text><text x="657" y="680">Progress</text></g>
+    <g font-size="12" fill="#31485D"><path d="M298 729h586M298 766h586M298 803h586M298 840h586" stroke="#E8EDF1"/><text x="312" y="716" font-weight="700">Level 1A</text><text x="432" y="716">32</text><text x="518" y="716">Teacher A</text><text x="657" y="716">85%</text><rect x="704" y="706" width="120" height="10" rx="5" fill="#E4E9ED"/><rect x="704" y="706" width="96" height="10" rx="5" fill="#299564"/>
+    <text x="312" y="753" font-weight="700">Level 1B</text><text x="432" y="753">28</text><text x="518" y="753">Teacher B</text><text x="657" y="753">78%</text><rect x="704" y="743" width="120" height="10" rx="5" fill="#E4E9ED"/><rect x="704" y="743" width="88" height="10" rx="5" fill="#438FD0"/>
+    <text x="312" y="790" font-weight="700">Level 2A</text><text x="432" y="790">30</text><text x="518" y="790">Teacher C</text><text x="657" y="790">72%</text><rect x="704" y="780" width="120" height="10" rx="5" fill="#E4E9ED"/><rect x="704" y="780" width="82" height="10" rx="5" fill="#299564"/></g>
+    <text x="945" y="640" fill="#162E45" font-size="17" font-weight="700">Upcoming Events</text>
+    <g font-family="Arial,sans-serif"><rect x="946" y="659" width="56" height="55" rx="9" fill="#F1F5F8"/><text x="960" y="683" fill="#26435B" font-size="14" font-weight="700">25</text><text x="960" y="702" fill="#718294" font-size="10">SEP</text><text x="1020" y="677" fill="#26394B" font-size="14" font-weight="700">Teachers Meeting</text><text x="1020" y="699" fill="#718294" font-size="11">Staff and class planning</text>
+      <path d="M945 729h587" stroke="#E8EDF1"/><rect x="946" y="739" width="56" height="55" rx="9" fill="#F9F0DD"/><text x="960" y="763" fill="#8E6220" font-size="14" font-weight="700">28</text><text x="960" y="782" fill="#9A7A4C" font-size="10">SEP</text><text x="1020" y="757" fill="#26394B" font-size="14" font-weight="700">Parent Information Session</text><text x="1020" y="779" fill="#718294" font-size="11">Communication and progress update</text>
+      <rect x="945" y="810" width="587" height="43" rx="9" fill="#FFF4DE"/><path d="M965 839h19m-16-5 6-7 7 7" stroke="#A9782D" stroke-width="2"/><text x="998" y="837" fill="#76511D" font-size="12" font-weight="700">Illustrative dashboard preview · Sample interface and data</text></g>
+  </g>
+</svg>

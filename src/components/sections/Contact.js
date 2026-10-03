@@ -1,27 +1,48 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { profile } from "@/lib/data";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import Button from "@/components/ui/Button";
-import { MailIcon, PhoneIcon, MapPinIcon, SendIcon, WhatsAppIcon } from "@/components/icons";
+import { MailIcon, PhoneIcon, MapPinIcon, WhatsAppIcon } from "@/components/icons";
+
+const serviceOptions = [
+  "Business website",
+  "E-commerce website",
+  "Custom business management system",
+  "School management system",
+  "Restaurant / POS system",
+  "Inventory and sales system",
+  "Booking and appointment system",
+  "Mobile application",
+  "Desktop application",
+  "Backend, API or system integration",
+  "Hosting and website maintenance",
+  "IT consultancy or support",
+  "Cybersecurity assessment",
+  "Business process automation",
+  "Not sure yet — help me assess the need",
+];
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", service: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [whatsappReady, setWhatsappReady] = useState(false);
+  const [emailFieldReady, setEmailFieldReady] = useState(false);
+
+  useEffect(() => {
+    setEmailFieldReady(true);
+  }, []);
 
   const handleChange = (event) => {
-    setSent(false);
+    setWhatsappReady(false);
     setFormData((current) => ({ ...current, [event.target.name]: event.target.value }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const subject = formData.service || "New service inquiry";
-    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nService: ${subject}\n\n${formData.message}`;
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    window.open(whatsappInquiryUrl, "_blank", "noopener,noreferrer");
+    setWhatsappReady(true);
   };
 
   const whatsappMessage = [
@@ -88,35 +109,42 @@ export default function Contact() {
               <div className="mb-6">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Start a conversation</p>
                 <h3 className="mt-2 text-2xl font-bold text-foreground">Send us your inquiry</h3>
-                <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">This form prepares an email for you to review and send.</p>
+                <p className="mt-2 text-sm leading-relaxed text-foreground-secondary">Share a few details and we’ll prepare a WhatsApp message for you to review and send.</p>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block text-sm font-medium text-foreground-secondary" htmlFor="name">Your name
-                  <input id="name" name="name" value={formData.name} onChange={handleChange} required className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent" placeholder="Name" />
+                  <input id="name" name="name" autoComplete="name" maxLength={100} value={formData.name} onChange={handleChange} required className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent" placeholder="Name" />
                 </label>
-                <label className="block text-sm font-medium text-foreground-secondary" htmlFor="email">Email address
-                  <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent" placeholder="you@example.com" />
+                <label className="block text-sm font-medium text-foreground-secondary" htmlFor="email">Email address <span className="font-normal text-foreground-muted">(optional)</span>
+                  {emailFieldReady ? (
+                    <input id="email" name="email" type="email" autoComplete="email" maxLength={254} value={formData.email} onChange={handleChange} className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent" placeholder="you@example.com" />
+                  ) : (
+                    <span aria-hidden="true" className="mt-2 block h-[50px] w-full rounded-xl border border-border bg-background" />
+                  )}
                 </label>
               </div>
 
               <label className="mt-4 block text-sm font-medium text-foreground-secondary" htmlFor="service">Service you’re interested in
                 <select id="service" name="service" value={formData.service} onChange={handleChange} className="mt-2 w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent">
                   <option value="">Choose a service (optional)</option>
-                  {profile.services.map((service) => <option key={service} value={service}>{service}</option>)}
+                  {serviceOptions.map((service) => <option key={service} value={service}>{service}</option>)}
                 </select>
               </label>
 
               <label className="mt-4 block text-sm font-medium text-foreground-secondary" htmlFor="message">How can we help?
-                <textarea id="message" name="message" rows={6} value={formData.message} onChange={handleChange} required className="mt-2 w-full resize-y rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent" placeholder="Tell us a little about what you need..." />
+                <textarea id="message" name="message" rows={6} maxLength={2000} value={formData.message} onChange={handleChange} required className="mt-2 w-full resize-y rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition focus:border-accent focus:ring-1 focus:ring-accent" placeholder="What are you trying to improve, and how do you handle it today?" />
               </label>
 
-              <Button type="submit" size="lg" className="mt-5 w-full justify-center">{sent ? "Email draft prepared" : <>Prepare email inquiry <SendIcon size={17} /></>}</Button>
-              {sent && <p role="status" className="mt-3 text-center text-sm text-accent">Your email application should open with the inquiry ready to review and send.</p>}
-              <a href={whatsappInquiryUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-accent/40 hover:text-accent">
-                <WhatsAppIcon size={18} /> Continue with WhatsApp
+              <Button type="submit" size="lg" className="mt-5 w-full justify-center"><WhatsAppIcon size={18} /> Continue to WhatsApp</Button>
+              {whatsappReady && <p role="status" className="mt-3 text-center text-sm text-accent">Your message is ready in WhatsApp. Review it there, then tap Send.</p>}
+              <a
+                href={`mailto:${profile.email}?subject=${encodeURIComponent(formData.service || "JAYTRIX SYSTEMS service inquiry")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\nService: ${formData.service || "Not selected"}\n\n${formData.message}`)}`}
+                className="mt-3 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-accent/40 hover:text-accent"
+              >
+                <MailIcon size={18} /> Prepare an email instead
               </a>
-              <p className="mt-3 text-center text-xs leading-relaxed text-foreground-muted">Your message opens in your chosen app for you to review and send.</p>
+              <p className="mt-3 text-center text-xs leading-relaxed text-foreground-muted">No message is sent automatically. Review and send it from WhatsApp or your email app.</p>
             </form>
           </AnimateOnScroll>
         </div>

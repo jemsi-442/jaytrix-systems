@@ -2,6 +2,7 @@ import "./globals.css";
 import { profile } from "@/lib/data";
 
 export const metadata = {
+  metadataBase: new URL("https://jaytrix.co.tz"),
   title: `${profile.name} | ${profile.title}`,
   applicationName: "JAYTRIX SYSTEMS",
   description: `${profile.tagline} Based in ${profile.location}.`,
