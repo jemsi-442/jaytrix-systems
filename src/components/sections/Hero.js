@@ -28,7 +28,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button href="#contact" size="lg">Talk to our team</Button>
+            <Button href="/chat" size="lg">Talk to our team</Button>
             <a href={profile.social.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-border bg-surface px-6 py-3 font-semibold text-foreground transition hover:border-accent/40 hover:text-accent">
               <WhatsAppIcon size={19} /> Chat on WhatsApp
             </a>
