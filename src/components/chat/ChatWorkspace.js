@@ -67,7 +67,10 @@ export default function ChatWorkspace() {
     const result = mode === "signup"
       ? await supabase.auth.signUp({
           email: form.email.trim(), password: form.password,
-          options: { data: { display_name: form.name.trim(), requested_service: form.service } },
+          options: {
+            data: { display_name: form.name.trim(), requested_service: form.service },
+            emailRedirectTo: new URL("/chat", window.location.origin).toString(),
+          },
         })
       : await supabase.auth.signInWithPassword({ email: form.email.trim(), password: form.password });
     setBusy(false);
