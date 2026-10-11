@@ -8,6 +8,7 @@ export default function AdminInbox() {
   const configured = isSupabaseConfigured();
   const supabase = useMemo(() => configured ? createClient() : null, [configured]);
   const [session, setSession] = useState(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [threads, setThreads] = useState([]);
   const [selected, setSelected] = useState(null);
   const [messages, setMessages] = useState([]);
@@ -35,9 +36,21 @@ export default function AdminInbox() {
 
   useEffect(() => {
     if (!supabase) return undefined;
-    supabase.auth.getSession().then(({ data }) => setSession(data.session));
-    const { data } = supabase.auth.onAuthStateChange((_event, next) => setSession(next));
-    return () => data.subscription.unsubscribe();
+    let active = true;
+    supabase.auth.getSession().then(({ data }) => {
+      if (active) {
+        setSession(data.session);
+        setAuthLoading(false);
+      }
+    });
+    const { data } = supabase.auth.onAuthStateChange((_event, next) => {
+      setSession(next);
+      setAuthLoading(false);
+    });
+    return () => {
+      active = false;
+      data.subscription.unsubscribe();
+    };
   }, [supabase]);
 
   useEffect(() => {
@@ -81,13 +94,14 @@ export default function AdminInbox() {
           <Link href="/chat" className="text-sm text-slate-600">Open customer chat ↗</Link>
         </div>
         {!configured ? <p className="rounded-xl bg-white p-6">Supabase environment variables are not available in this deployment. Check the Production variables in Vercel and redeploy.</p>
-          : !session ? <div className="rounded-xl bg-white p-6">Sign in at <Link className="font-semibold text-blue-800" href="/chat">/chat</Link> with your admin account, then return here.</div>
+          : authLoading ? <div role="status" className="rounded-xl bg-white p-6 text-sm text-slate-500">Checking your sign-in…</div>
+            : !session ? <div className="rounded-xl bg-white p-6">Sign in at <Link className="font-semibold text-blue-800" href="/chat">/chat</Link> with your admin account, then return here.</div>
             : !isAdmin ? <div role="alert" className="rounded-xl border border-amber-200 bg-amber-50 p-6 text-amber-950">{notice || "This account is not an admin."}<button onClick={() => supabase.auth.signOut()} className="ml-3 underline">Sign out</button></div>
               : (
                 <div className="grid min-h-[75vh] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg md:grid-cols-[340px_1fr]">
                   <aside className={`${selected ? "hidden md:block" : "block"} border-b border-slate-200 md:border-b-0 md:border-r`}>
                     <div className="border-b p-4"><p className="font-semibold">Conversations</p><p className="text-xs text-slate-500">Customer names and messages</p><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Search conversations" aria-label="Search conversations" className="mt-3 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm outline-none focus:border-blue-700" /></div>
-                    <div className="max-h-[70vh] overflow-y-auto">{visibleThreads.map((thread) => <button key={thread.id} onClick={() => setSelected(thread)} className={`block w-full border-b px-4 py-4 text-left transition hover:bg-slate-50 ${selected?.id === thread.id ? "bg-blue-50" : ""}`}><span className="block truncate font-semibold">{thread.profiles?.display_name || "Customer"}</span><span className="mt-1 block truncate text-xs text-slate-500">{thread.subject} · {thread.status}</span></button>)}{!visibleThreads.length && <p className="p-5 text-sm text-slate-500">{search ? "No matching conversations." : "No conversations yet."}</p>}</div>
+                    <div className="max-h-[70vh] overflow-y-auto">{visibleThreads.map((thread) => <button key={thread.id} onClick={() => setSelected(thread)} className={`flex w-full items-center gap-3 border-b px-4 py-4 text-left transition hover:bg-slate-50 ${selected?.id === thread.id ? "bg-blue-50" : ""}`}><span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-blue-100 font-semibold text-blue-950">{(thread.profiles?.display_name || "C").charAt(0).toUpperCase()}</span><span className="min-w-0 flex-1"><span className="flex items-center justify-between gap-2"><span className="truncate font-semibold">{thread.profiles?.display_name || "Customer"}</span><time className="shrink-0 text-[10px] text-slate-400">{new Date(thread.updated_at).toLocaleDateString("en-TZ", { day: "numeric", month: "short" })}</time></span><span className="mt-1 block truncate text-xs text-slate-500">{thread.subject}</span><span className={`mt-1 inline-flex rounded-full px-2 py-0.5 text-[10px] font-medium ${thread.status === "open" ? "bg-emerald-50 text-emerald-700" : "bg-slate-100 text-slate-500"}`}>{thread.status}</span></span></button>)}{!visibleThreads.length && <p className="p-5 text-sm text-slate-500">{search ? "No matching conversations." : "No conversations yet."}</p>}</div>
                   </aside>
                   <section className={`${selected ? "flex" : "hidden md:flex"} min-h-[65vh] flex-col`}>
                     {selected ? <>

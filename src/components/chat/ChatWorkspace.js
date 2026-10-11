@@ -143,10 +143,20 @@ export default function ChatWorkspace() {
       </div>
       <section className="mx-auto grid min-h-[min(760px,82vh)] max-w-5xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl md:grid-cols-[300px_1fr]">
         <aside className="hidden bg-slate-950 p-7 text-white md:block">
+          <span className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-lg font-bold text-white ring-1 ring-white/15">J</span>
           <p className="text-xs font-semibold uppercase tracking-[.2em] text-blue-300">JAYTRIX CLIENT SUPPORT</p>
           <h1 className="mt-4 text-2xl font-semibold">Let’s talk about your business.</h1>
           <p className="mt-3 text-sm leading-6 text-slate-300">Tell us what you need or what challenge you are facing. Our team will reply in this chat.</p>
-          <div className="mt-9 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-6 text-slate-300">Your account details and messages are visible only to the relevant team.</div>
+          <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <p className="text-[11px] font-semibold uppercase tracking-[.16em] text-blue-300">Your enquiry</p>
+            <p className="mt-2 text-sm font-medium text-white">{conversation?.subject || "Start a new conversation"}</p>
+            <div className="mt-4 space-y-3 text-xs text-slate-300">
+              <p><span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-400/15 text-blue-200">1</span>Tell us what you need</p>
+              <p><span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-400/15 text-blue-200">2</span>We review your message</p>
+              <p><span className="mr-2 inline-flex h-5 w-5 items-center justify-center rounded-full bg-blue-400/15 text-blue-200">3</span>We discuss next steps</p>
+            </div>
+          </div>
+          <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-xs leading-5 text-slate-300">Your account details and messages are visible only to the relevant team.</div>
         </aside>
         <div className="flex min-h-[min(760px,82vh)] flex-col">
           <header className="flex items-center justify-between border-b border-slate-200 px-5 py-4 sm:px-7">
@@ -154,7 +164,7 @@ export default function ChatWorkspace() {
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-950 text-sm font-bold text-white">J</span>
               <div><p className="font-semibold">JAYTRIX SYSTEMS</p><p className="mt-0.5 text-xs text-slate-500">{session ? "Client support · Private conversation" : "Sign in to start chatting"}</p></div>
             </div>
-            {session && <div className="flex items-center gap-3"><span className="max-w-36 truncate text-sm text-slate-600">{session.user.user_metadata?.display_name || session.user.email}</span>{admin && <Link href="/admin/chat" className="text-sm font-semibold text-blue-800">Inbox</Link>}<button onClick={signOut} className="text-sm text-slate-500 hover:text-slate-900">Sign out</button></div>}
+            {session && <div className="flex items-center gap-2 sm:gap-3"><span className="hidden max-w-36 truncate text-sm text-slate-600 sm:block">{session.user.user_metadata?.display_name || session.user.email}</span><span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-100 text-xs font-semibold text-blue-950 sm:hidden">{(session.user.user_metadata?.display_name || session.user.email || "U").charAt(0).toUpperCase()}</span>{admin && <Link href="/admin/chat" className="rounded-lg px-2 py-1 text-xs font-semibold text-blue-800 hover:bg-blue-50 sm:px-3 sm:text-sm">Inbox</Link>}<button onClick={signOut} className="rounded-lg px-2 py-1 text-xs text-slate-500 hover:bg-slate-100 hover:text-slate-900 sm:px-3 sm:text-sm">Sign out</button></div>}
           </header>
 
           {!configured ? (
@@ -171,6 +181,9 @@ export default function ChatWorkspace() {
             </div>
           ) : !session ? (
             <div className="m-auto w-full max-w-md px-6 py-10">
+              <div className="mb-7 grid grid-cols-2 rounded-xl bg-slate-100 p-1" role="tablist" aria-label="Account access">
+                {[{ id: "signin", label: "Sign in" }, { id: "signup", label: "Create account" }].map((tab) => <button key={tab.id} type="button" role="tab" aria-selected={mode === tab.id} onClick={() => { setMode(tab.id); setNotice(""); }} className={`rounded-lg px-3 py-2.5 text-sm font-semibold transition ${mode === tab.id ? "bg-white text-blue-950 shadow-sm" : "text-slate-500 hover:text-slate-800"}`}>{tab.label}</button>)}
+              </div>
               <h2 className="text-2xl font-semibold">{mode === "signup" ? "Create an account" : "Welcome back"}</h2>
               <p className="mt-2 text-sm leading-6 text-slate-500">Use your account to contact us and keep track of your conversation.</p>
               <form onSubmit={submitAuth} className="mt-7 space-y-4">
@@ -181,7 +194,6 @@ export default function ChatWorkspace() {
                 {notice && <p role="status" className="rounded-xl bg-blue-50 p-3 text-sm text-blue-900">{notice}</p>}
                 <button disabled={busy} className="w-full rounded-xl bg-blue-950 px-4 py-3 font-semibold text-white transition hover:bg-blue-800 disabled:opacity-60">{busy ? "Please wait…" : mode === "signup" ? "Create account" : "Sign in and start chat"}</button>
               </form>
-              <button onClick={() => { setMode(mode === "signup" ? "signin" : "signup"); setNotice(""); }} className="mt-5 text-sm font-medium text-blue-800">{mode === "signup" ? "Already have an account? Sign in" : "New here? Create an account"}</button>
             </div>
           ) : (
             <>
