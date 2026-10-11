@@ -150,7 +150,10 @@ export default function ChatWorkspace() {
         </aside>
         <div className="flex min-h-[min(760px,82vh)] flex-col">
           <header className="flex items-center justify-between border-b border-slate-200 px-5 py-4 sm:px-7">
-            <div><p className="font-semibold">JAYTRIX SYSTEMS</p><p className="mt-0.5 text-xs text-slate-500">{session ? "Service conversation" : "Sign in to start chatting"}</p></div>
+            <div className="flex items-center gap-3">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-950 text-sm font-bold text-white">J</span>
+              <div><p className="font-semibold">JAYTRIX SYSTEMS</p><p className="mt-0.5 text-xs text-slate-500">{session ? "Client support · Private conversation" : "Sign in to start chatting"}</p></div>
+            </div>
             {session && <div className="flex items-center gap-3"><span className="max-w-36 truncate text-sm text-slate-600">{session.user.user_metadata?.display_name || session.user.email}</span>{admin && <Link href="/admin/chat" className="text-sm font-semibold text-blue-800">Inbox</Link>}<button onClick={signOut} className="text-sm text-slate-500 hover:text-slate-900">Sign out</button></div>}
           </header>
 
@@ -186,6 +189,16 @@ export default function ChatWorkspace() {
                 <div className="mx-auto max-w-md rounded-2xl border border-blue-100 bg-white px-4 py-3 text-center text-xs leading-5 text-slate-600 shadow-sm">Welcome to JAYTRIX SYSTEMS chat. Tell us what service you need or what challenge you would like to solve.</div>
                 {chatLoading && <p role="status" className="text-center text-sm text-slate-500">Loading your conversation…</p>}
                 {!chatLoading && conversation?.status === "closed" && <p role="status" className="mx-auto max-w-md rounded-xl bg-amber-50 p-3 text-center text-sm text-amber-900">This conversation is closed. Please contact our team to start a new enquiry.</p>}
+                {!chatLoading && conversation?.status === "open" && messages.length === 0 && (
+                  <div className="mx-auto max-w-lg pt-2">
+                    <p className="mb-3 text-center text-xs font-medium uppercase tracking-wide text-slate-500">Start with a common request</p>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {["I need a business website", "I need a sales or inventory system", "I want to discuss IT or cybersecurity"].map((prompt) => (
+                        <button key={prompt} type="button" onClick={() => setDraft(prompt)} className="rounded-full border border-blue-200 bg-white px-3.5 py-2 text-xs font-medium text-blue-950 shadow-sm transition hover:border-blue-500 hover:bg-blue-50 sm:text-sm">{prompt}</button>
+                      ))}
+                    </div>
+                  </div>
+                )}
                 {messages.map((message) => {
                   const own = message.sender_id === session.user.id;
                   return <div key={message.id} className={`flex ${own ? "justify-end" : "justify-start"}`}><div className={`max-w-[85%] rounded-2xl px-4 py-3 shadow-sm sm:max-w-[72%] ${own ? "rounded-br-md bg-blue-950 text-white" : "rounded-bl-md border border-slate-200 bg-white text-slate-800"}`}><p className="whitespace-pre-wrap break-words text-sm leading-6">{message.body}</p><time className={`mt-1 block text-right text-[10px] ${own ? "text-blue-200" : "text-slate-400"}`}>{new Date(message.created_at).toLocaleString("en-TZ", { dateStyle: "medium", timeStyle: "short" })}</time></div></div>;
@@ -193,9 +206,12 @@ export default function ChatWorkspace() {
                 {notice && <p role="status" className="mx-auto max-w-lg rounded-lg bg-amber-50 p-3 text-sm text-amber-900">{notice}</p>}
                 <div ref={bottomRef} />
               </div>
-              <form onSubmit={sendMessage} className="flex items-end gap-3 border-t border-slate-200 bg-white p-4 sm:p-5">
+              <form onSubmit={sendMessage} className="border-t border-slate-200 bg-white p-4 sm:p-5">
+                <div className="flex items-end gap-3">
                 <textarea value={draft} onChange={(e) => setDraft(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); e.currentTarget.form?.requestSubmit(); } }} rows={1} maxLength={4000} placeholder="Type your message…" aria-label="Your message" className="max-h-32 min-h-12 flex-1 resize-y rounded-2xl border border-slate-300 px-4 py-3 text-sm outline-none focus:border-blue-700 focus:ring-2 focus:ring-blue-100" />
-                <button disabled={busy || !draft.trim() || !conversation || conversation.status === "closed"} className="rounded-xl bg-blue-950 px-5 py-3 font-semibold text-white hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50">Send</button>
+                <button type="submit" aria-label="Send message" disabled={busy || !draft.trim() || !conversation || conversation.status === "closed"} className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-950 text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="h-5 w-5"><path d="m21 3-7.2 18-3.9-7.8L2 9.3 21 3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/><path d="M21 3 9.9 13.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg></button>
+                </div>
+                <p className="mt-2 pl-1 text-[11px] text-slate-400">Press Enter to send · Shift + Enter for a new line</p>
               </form>
             </>
           )}
