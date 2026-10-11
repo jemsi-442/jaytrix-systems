@@ -74,7 +74,12 @@ export default function ChatWorkspace() {
         })
       : await supabase.auth.signInWithPassword({ email: form.email.trim(), password: form.password });
     setBusy(false);
-    if (result.error) setNotice(result.error.message);
+    if (result.error) {
+      const message = result.error.message || "";
+      setNotice(/rate limit|too many emails|over_email_send_rate_limit/i.test(message)
+        ? "Supabase has reached its email sending limit. Please wait before trying again. For customer signups, configure a custom SMTP provider in Supabase."
+        : message);
+    }
     else if (mode === "signup" && !result.data.session) setNotice("Your account has been created. Check your email to confirm it, then sign in.");
     else setNotice("");
   }
