@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { navLinks, profile } from "@/lib/data";
+import { navLinks } from "@/lib/data";
 import useScrollSpy from "@/hooks/useScrollSpy";
-import { JayTrixMarkIcon, MenuIcon, XIcon, WhatsAppIcon } from "@/components/icons";
+import { JayTrixMarkIcon, MenuIcon, XIcon } from "@/components/icons";
 import { cn } from "@/lib/utils";
 
 const sectionIds = navLinks.map((link) => link.href.replace("#", ""));
@@ -44,7 +44,7 @@ export default function Navbar() {
             const id = link.href.slice(1);
             return <a key={link.href} href={link.href} aria-current={activeId === id ? "page" : undefined} className={cn("rounded-lg px-3 py-2 text-sm font-medium transition", activeId === id ? "bg-accent/8 text-accent" : "text-foreground-secondary hover:bg-background-secondary hover:text-foreground")}>{link.label}</a>;
           })}
-          <a href="#contact" className="ml-3 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-dark">Talk to our team</a>
+          <a href="/chat" className="ml-3 rounded-xl bg-accent px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-dark">Chat with our team</a>
         </div>
 
         <button type="button" onClick={() => setMobileOpen((open) => !open)} className="rounded-lg p-2 text-foreground-secondary transition hover:bg-background-secondary hover:text-accent md:hidden" aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen} aria-controls="mobile-navigation">
@@ -58,7 +58,7 @@ export default function Navbar() {
             const id = link.href.slice(1);
             return <a key={link.href} href={link.href} aria-current={activeId === id ? "page" : undefined} onClick={() => setMobileOpen(false)} className={cn("rounded-xl px-4 py-3 text-base font-medium transition", activeId === id ? "bg-accent/8 text-accent" : "text-foreground-secondary hover:bg-background-secondary")}>{link.label}</a>;
           })}
-          <a href={profile.social.whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)} className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 font-semibold text-white"><WhatsAppIcon size={19} /> Chat on WhatsApp</a>
+          <a href="/chat" onClick={() => setMobileOpen(false)} className="mt-3 inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 font-semibold text-white">Chat with our team</a>
         </nav>
       </div>
     </header>
