@@ -15,10 +15,8 @@ CORE HR & ADMINISTRATIVE COMPETENCIES
 - Payroll workflow and deductions process understanding
 - Staff data handling and confidentiality
 - Administrative coordination and document management
-- Recruitment and onboarding support
 - Reporting, data organization, and record accuracy
 - Business process and operational workflow understanding
-- Professional communication
 
 TECHNOLOGY ADVANTAGE
 - HR and payroll systems: familiarity with employee records, salary processing, and deductions workflows.
@@ -44,7 +42,7 @@ EDUCATION
 Bachelor of Business Administration (BBA) | Tanzania Institute of Accountancy (TIA)
 Study focused on business operations, administration, strategic planning, and decision-making. This foundation helps me understand organizational needs and how digital systems can support day-to-day work.
 Diploma in Human Resource Management | Tanzania Institute of Accountancy (TIA) | 2021–2024
-Study covered HR operations, payroll, employee records, and organizational workflows. This knowledge supports my understanding of digital payroll and employee-record systems.
+Coursework covered HR operations, payroll, employee records, recruitment and onboarding processes, and professional communication. This is academic knowledge from my studies, not a claim of work experience in those areas.
 How these qualifications connect to technology: The BBA provides a view of organizational goals and operations, while HRM adds knowledge of employees, payroll, and staff records. Together, they help connect people and business processes to digital tools that support them.
 Secondary Education | Kitefu Secondary School | 2017–2020
 Alongside my secondary school studies, I developed my technology skills by independently learning programming outside the classroom.
