@@ -3,7 +3,7 @@ import { JayTrixMarkIcon, MailIcon, WhatsAppIcon } from "@/components/icons";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#071b3b] text-white">
+    <footer className="bg-[#062f73] text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[1.3fr_0.7fr_1fr] lg:px-8">
         <div>
           <a href="#hero" className="inline-flex items-center gap-3" aria-label="JAYTRIX SYSTEMS home">
